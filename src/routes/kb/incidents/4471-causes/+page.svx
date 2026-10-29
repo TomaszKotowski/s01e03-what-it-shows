@@ -2,7 +2,7 @@
 layout: runbook
 title: '#4471 holds two problems'
 owner: Tomasz Kotowski
-status: open
+status: closed
 reviewed: 2026-10-29
 signature: Tomasz Kotowski
 ---
@@ -14,10 +14,11 @@ signature: Tomasz Kotowski
 </script>
 
 #4471 merged every date report into one ticket and marked it known. Subject lines
-matched. The cause does not. It depends on the tenant and the channel.
+matched. The cause does not. It depends on the tenant and the channel. The desk
+closed #4471 on 5 October after resolving the two causes separately.
 
 <Callout kind="warn">
-  Known was wrong. The ticket holds two causes. The smaller one has no ticket of its own.
+  Known was wrong. The ticket held two causes, not one fix.
 </Callout>
 
 ## Causes
@@ -27,10 +28,12 @@ matched. The cause does not. It depends on the tenant and the channel.
 `parser` is the shared parser. It reads every date month first. A day-first tenant's
 dates come out flipped. Filed as
 [parser](https://github.com/TomaszKotowski/s01e03-what-it-shows/issues/1).
+**Fixed:** `fix(dates): parse dd/mm for eu locales`. Closed as completed.
 
 `hint` is booking-v3's date hint. The form prints MM/DD/YYYY. On the form channel,
 people type what the hint says, and the form reads it the tenant's way. Filed as
 [hint](https://github.com/TomaszKotowski/s01e03-what-it-shows/issues/2).
+**Won't fix:** booking-v3 form retired. Closed as not planned.
 
 Intake tagged reports from the browser. That tag is a guess. The table counts the
 tags beside the cause.

@@ -46,14 +46,14 @@
     <h1>#4471 holds two problems</h1>
     <p class="meta">
       <span>owner <b>Tomasz Kotowski</b></span>
-      <span class="status open">open</span>
+      <span class="status closed">closed</span>
       <span class="">reviewed 2026-10-29 · 0 days ago</span>
     </p>
   </header>
   
   <main>
-    <p>#4471 merged every date report into one ticket and marked it known. Subject lines matched. The cause does not. It depends on the tenant and the channel.</p>
-    <aside class="warn">Known was wrong. The ticket holds two causes. The smaller one has no ticket of its own.</aside>
+    <p>#4471 merged every date report into one ticket and marked it known. Subject lines matched. The cause does not. It depends on the tenant and the channel. The desk closed #4471 on 5 October after resolving the two causes separately.</p>
+    <aside class="warn">Known was wrong. The ticket held two causes, not one fix.</aside>
     <h2>Causes</h2>
     <p class="sum"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p>
     <table>
@@ -65,8 +65,8 @@
     </table>
 <p class="note">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p>
 
-    <p><code>parser</code> is the shared parser. It reads every date month first. A day-first tenant's dates come out flipped. Filed as <a href="https://github.com/TomaszKotowski/s01e03-what-it-shows/issues/1">parser</a>.</p>
-    <p><code>hint</code> is booking-v3's date hint. The form prints MM/DD/YYYY. On the form channel, people type what the hint says, and the form reads it the tenant's way. Filed as <a href="https://github.com/TomaszKotowski/s01e03-what-it-shows/issues/2">hint</a>.</p>
+    <p><code>parser</code> is the shared parser. It reads every date month first. A day-first tenant's dates come out flipped. Filed as <a href="https://github.com/TomaszKotowski/s01e03-what-it-shows/issues/1">parser</a>. <strong>Fixed:</strong> <code>fix(dates): parse dd/mm for eu locales</code>. Closed as completed.</p>
+    <p><code>hint</code> is booking-v3's date hint. The form prints MM/DD/YYYY. On the form channel, people type what the hint says, and the form reads it the tenant's way. Filed as <a href="https://github.com/TomaszKotowski/s01e03-what-it-shows/issues/2">hint</a>. <strong>Won't fix:</strong> booking-v3 form retired. Closed as not planned.</p>
     <p>Intake tagged reports from the browser. That tag is a guess. The table counts the tags beside the cause.</p>
     <p class="stamp">desk ref <b>DR-7XW9-ND68</b></p>
   </main>
