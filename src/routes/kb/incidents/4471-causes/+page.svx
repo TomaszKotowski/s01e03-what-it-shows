@@ -1,0 +1,38 @@
+---
+layout: runbook
+title: '#4471 holds two problems'
+owner: Tomasz Kotowski
+status: open
+reviewed: 2026-10-29
+signature: Tomasz Kotowski
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+#4471 merged every date report into one ticket and marked it known. Subject lines
+matched. The cause does not. It depends on the tenant and the channel.
+
+<Callout kind="warn">
+  Known was wrong. The ticket holds two causes. The smaller one has no ticket of its own.
+</Callout>
+
+## Causes
+
+<CauseTable ticket={4471} />
+
+`parser` is the shared parser. It reads every date month first. A day-first tenant's
+dates come out flipped. Filed as
+[parser](https://github.com/TomaszKotowski/s01e03-what-it-shows/issues/1).
+
+`hint` is booking-v3's date hint. The form prints MM/DD/YYYY. On the form channel,
+people type what the hint says, and the form reads it the tenant's way. Filed as
+[hint](https://github.com/TomaszKotowski/s01e03-what-it-shows/issues/2).
+
+Intake tagged reports from the browser. That tag is a guess. The table counts the
+tags beside the cause.
+
+<RenderStamp {signature} />
